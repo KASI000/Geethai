@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<title>Our Story — A Question</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="loader" class="loader"><div class="loader-pulse"></div><p class="loader-text">under the stars</p></div>
+<div class="curtain" id="curtain"></div>
+
+<div class="ambience" aria-hidden="true">
+  <div id="stars-layer" class="ambience-layer"></div>
+  <div id="fireflies-layer" class="ambience-layer"></div>
+  <div id="hearts-layer" class="ambience-layer"></div>
+  <div id="roses-layer" class="ambience-layer"></div>
+  <div id="flowers-layer" class="ambience-layer"></div>
+</div>
+<div class="moon" aria-hidden="true"></div>
+<canvas id="confetti-canvas" aria-hidden="true"></canvas>
+<canvas id="fireworks-canvas" aria-hidden="true"></canvas>
+<canvas id="click-canvas" aria-hidden="true"></canvas>
+
+<!-- 🎵 REPLACE with a slow, romantic instrumental -->
+<audio id="bgAudio" loop preload="none"><source src="assets/music/the-question.mp3" type="audio/mpeg"></audio>
+<button id="musicToggle" class="music-toggle" aria-label="Play or pause music">
+  <span class="bars"><span></span><span></span><span></span><span></span></span>
+</button>
+
+<nav class="story-progress" aria-label="Story progress">
+  <span class="bud" data-page="index.html"></span>
+  <span class="bud" data-page="birthday.html"></span>
+  <span class="bud" data-page="memories.html"></span>
+  <span class="bud" data-page="letter.html"></span>
+  <span class="bud" data-page="reasons.html"></span>
+  <span class="bud" data-page="proposal.html"></span>
+  <span class="bud" data-page="final.html"></span>
+</nav>
+
+<!-- ============================================================
+     PAGE 6 — ROMANTIC NIGHT SCENE
+     (auto-plays CONFIG.nightSequence, script.js)
+============================================================= -->
+<main class="page night-page">
+  <div class="page-inner">
+
+    <div class="night-sequence" id="nightSequence"></div>
+
+    <button id="nightContinueBtn" class="ghost-neon-btn hidden" style="margin-top:20px;">Continue</button>
+
+    <!-- ============================================================
+         PAGE 7 — THE PROPOSAL
+    ============================================================= -->
+    <div class="proposal-wrap hidden" id="proposalWrap">
+
+      <!-- Self-drawing heart outline -->
+      <svg class="heart-draw-wrap" viewBox="0 0 110 100">
+        <defs>
+          <linearGradient id="heartGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#ff2d95"/><stop offset="60%" stop-color="#8b3bff"/><stop offset="100%" stop-color="#21e6c1"/>
+          </linearGradient>
+        </defs>
+        <path class="heart-draw-path" d="M55 92 C20 68 2 48 2 28 C2 12 15 2 30 2 C41 2 50 8 55 18 C60 8 69 2 80 2 C95 2 108 12 108 28 C108 48 90 68 55 92 Z"/>
+      </svg>
+
+      <div id="proposalPre">
+        <p class="i-love-you">I Love You ❤</p>
+        <h2 class="neon-heading">Will You Be My <span class="glow">Partner?</span></h2>
+        <div class="proposal-buttons">
+          <button id="yesBtn" class="yes-btn">❤️ Yes</button>
+          <button id="waitBtn" class="wait-btn">😊 I Need More Time</button>
+        </div>
+      </div>
+      <div id="proposalResult" class="proposal-result hidden"></div>
+    </div>
+
+  </div>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
